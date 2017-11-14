@@ -5,10 +5,10 @@ var x1 = [0, 2, 4, 7, 9, 12, 16, 19, 21, 24, 26, 28];
 var x2 = [0, 2, 4, 7, 9, 12, 16, 19, 21, 24, 26, 28];
 
 //y positions
-var y1 = [0, 0, 0, -1, -2, -3, -3, -2, -1, 0, 0, 0];
+var y1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 //y positions to morph to
-var y2 = [-1, 0, 0, 1, 2, 3, 3, 2, 1, 0, 0, -1];
+var y2 = [0, 0, 1, 2, 3, 3, 3, 3, 2, 1, 0, 0];
 
 var points1 = [];
 var points2 = [];
@@ -52,6 +52,8 @@ function draw() {
     push();
     translate(200,200);
     noFill();
+    strokeWeight(2);
+    strokeCap(ROUND);
     stroke(0);
     beginShape();
     for (var i = 0; i < morphed.length; i++) {
@@ -60,24 +62,6 @@ function draw() {
     }
     endShape();
     pop();
-
-    //example with curveVertex
-    // push();
-    // translate(200, 200);
-    // noFill();
-    // stroke(0);
-    // beginShape();
-    // var p = morphed[0];
-    // vertex(p.x, p.y);
-
-    // for (var i = 0; i < morphed.length; i++) {
-    //     p = morphed[i];
-    //     curveVertex(p.x, p.y);
-    // }
-    // p = morphed[morphed.length-1];
-    // vertex(p.x, p.y);
-    // endShape();
-    // pop();
 
 
 }
